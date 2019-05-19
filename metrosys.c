@@ -56,6 +56,7 @@ MetroStation getFirstStop(MetroLine metroLine){
 MetroStation getPriorStop(MetroLine metroLine,MetroStation metroStation){
     MetroStation priorStation = {'\0'};
     int i;
+
     if(equals(metroLine.MetroStations[SIZE-1],metroStation))
         return priorStation;
     else{
@@ -66,10 +67,17 @@ MetroStation getPriorStop(MetroLine metroLine,MetroStation metroStation){
         return priorStation;
     }
 }
+int getLastStationLoc(MetroStations metroStations[]){
+    int i=1;
+    while(metroStations[SIZE-i].name[0]!=0)
+        i++;
+    return i;
+}
 MetroStation getNextStop(MetroLine metroLine,MetroStation metroStation){
     MetroStation nextStation= {'\0'};
     int i;
-    if(equals(metroLine.MetroStations[0],metroStation))
+    int lastStationLoc = getLastStationLoc(metroLine.MetroStations);
+    if(equals(metroLine.MetroStations[lastStationLoc-1],metroStation))
         return nextStation;
     else{
         for(i = 1 ; i < SIZE ; i++){

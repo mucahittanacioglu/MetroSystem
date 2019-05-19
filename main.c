@@ -3,7 +3,9 @@
 #include <string.h>
 #include <Math.h>
 #include "metrosys.h"
-
+	/*
+	*Mucahit Tanacioglu 150115006
+	*/
 //Declare a MetroSystem with the name of istanbul and an empty content.
 MetroSystem istanbul = {"istanbul", '\0'};
 
